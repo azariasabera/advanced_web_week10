@@ -1,10 +1,16 @@
-import './MyList.css';
-
+//import './MyList.css';
 function MyList({ header, items, updateItem }) {
 
-    const getClassName = (clicked) => {
-        if (clicked)
-            return 'clicked';
+    /*const getClassName = (clicked) => {
+        if (clicked) {
+            return 'clicked'
+        }
+    }*/
+
+    const checkClicked = (clicked) => {
+        if (clicked) {
+            return { textDecoration: 'line-through' }
+        }
     }
 
     return (
@@ -12,8 +18,14 @@ function MyList({ header, items, updateItem }) {
             <h1>{header}</h1>
             <ol>
                 {items.map(item => (
-                    <li key={item.id} onClick={()=>updateItem(item.id)} className={getClassName(item.clicked)}
-                    >{item.text}</li>
+                    <li 
+                        key={item.id} 
+                        onClick={()=>updateItem(item.id)}
+                        style={checkClicked(item.clicked)}
+                        /*class={getClassName(item.clicked)}*/
+                    >
+                        {item.text}
+                    </li>
                 ))}
             </ol>
         </div>
@@ -22,6 +34,8 @@ function MyList({ header, items, updateItem }) {
 
 // Alternative way to give className (very easy way)
 // className={ item.clicked ? 'clicked' : '' }
+
+// or for style: style={{ textDecoration: item.clicked ? 'line-through' : 'none' }}
 
 
 export default MyList

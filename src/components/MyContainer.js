@@ -18,7 +18,8 @@ const MyContainer = () => {
     const updateItem = (id) => {
         const newItems = items.map(item => {
             if (item.id === id) {
-                return { ...item, clicked: !item.clicked };
+                //return { ...item, clicked: !item.clicked };
+                return { ...item, clicked: true };
             }
             return item;
         });

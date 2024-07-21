@@ -3,12 +3,10 @@ import './MyList.css';
 function MyList({ header, items, updateItem }) {
 
     const getClassName = (clicked) => {
-        if (clicked) {
+        if (clicked)
             return 'clicked';
-        } else {
-            return '';
-        }
     }
+
     return (
         <div>
             <h1>{header}</h1>

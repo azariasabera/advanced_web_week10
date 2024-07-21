@@ -1,6 +1,13 @@
-function MyList() {
+function MyList({ header, items }) {
   return (
-    <div>MyList</div>
+    <div>
+        <h1>{header}</h1>
+        <ol>
+            {items.map(item => (
+                <li key={item.id}>{item.text}</li>
+            ))}
+        </ol>
+    </div>
   )
 }
 

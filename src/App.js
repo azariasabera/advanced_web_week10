@@ -1,5 +1,5 @@
 import './App.css';
-import Container from './components/MyContainer';
+import MyContainer from './components/MyContainer';
 //import { useState } from 'react'; // this is a hook
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         age: 30
       }} />
       <Test2 name="Jane Doe" age={25} />
-      <Container />
+      <MyContainer />
     </div>
     // if you want to send a prop like an jsobject or function, we would use sth={the thing we want to send, ie. a function or object}
   );
